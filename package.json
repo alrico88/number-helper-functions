@@ -1,0 +1,21 @@
+{
+  "name": "number-helper-functions",
+  "version": "1.0.0",
+  "description": "Helper with multiple number-related methods",
+  "main": "index.js",
+  "author": "Alberto Rico",
+  "repository": {
+    "url": "https://github.com/alrico88/number-helper-functions"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "eslint": "^5.16.0"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 2,
+    "semi": false,
+    "singleQuote": true,
+    "eslintIntegration": true
+  }
+}
