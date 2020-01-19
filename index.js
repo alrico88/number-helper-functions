@@ -6,34 +6,67 @@
 class NumberHelper {
 
   /**
-   *Creates an instance of NumberHelper.
-   * @memberof NumberHelper
+   * Checks if element is a number
+   * @param {string|number} n
+   * @returns {boolean}
    */
-  constructor() {
-    this.isNumber = (n) => !isNaN(n);
-    this.isInt = (n) => this.isNumber(n) && n % 1 === 0;
-    this.isFloat = (n) => this.isNumber(n) && n.toString().includes('.');
-    this.isEven = (n) => n % 2 === 0;
-    this.isOdd = (n) => n % 2 !== 0;
+  static isNumber(n) {
+    return !isNaN(n);
+  }
 
-    /**
-     * Converts string to number
-     *
-     * @param {string|number} toCheck Number-like to convert
-     * @param {number} [decimals=2] Number of decimals to truncate
-     * @returns {number}
-     */
-    this.convertToNumber = (toCheck, decimals = 2) => {
-      let number;
-      if (this.isInt(toCheck)) {
-        number = Number(toCheck);
-      } else if (this.isFloat(toCheck)) {
-        number = Number(Number(toCheck).toFixed(decimals));
-      } else {
-        number = 0;
-      }
-      return number;
-    };
+  /**
+   * Checks if element is an integer
+   * @param {string|number} n
+   * @returns {boolean}
+   */
+  static isInt(n) {
+    return NumberHelper.isNumber(n) && n % 1 === 0;
+  }
+
+  /**
+   * Checks if element is a float number
+   * @param {string|number} n
+   * @returns {boolean}
+   */
+  static isFloat(n) {
+    return NumberHelper.isNumber(n) && n.toString().includes('.');
+  }
+
+  /**
+   * Checks if number is event
+   * @param {number} n
+   * @returns {boolean}
+   */
+  static isEven(n) {
+    return n % 2 === 0;
+  }
+
+  /**
+   * Checks if number is odd
+   * @param {number} n
+   * @returns {boolean}
+   */
+  static isOdd(n) {
+    return n % 2 !== 0;
+  }
+
+  /**
+   * Converts string to number
+   *
+   * @param {string|number} toCheck Number-like to convert
+   * @param {number} [decimals=2] Number of decimals to truncate
+   * @returns {number}
+   */
+  static convertToNumber(toCheck, decimals) {
+    let number;
+    if (this.isInt(toCheck)) {
+      number = Number(toCheck);
+    } else if (this.isFloat(toCheck)) {
+      number = Number(Number(toCheck).toFixed(decimals));
+    } else {
+      number = 0;
+    }
+    return number;
   }
 
   /**
@@ -42,10 +75,9 @@ class NumberHelper {
    * @param {string|number} value String or number to process
    * @param {number} [decimals=2] No. of decimals to truncate to
    * @returns {number} Parsed and processed number
-   * @memberof NumberHelper
    */
-  processNumber(value, decimals = 2) {
-    return this.convertToNumber(value, decimals);
+  static processNumber(value, decimals = 2) {
+    return NumberHelper.convertToNumber(value, decimals);
   }
 }
 

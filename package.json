@@ -1,6 +1,6 @@
 {
   "name": "number-helper-functions",
-  "version": "1.0.1",
+  "version": "2.0.0",
   "description": "Helper with multiple number-related methods",
   "main": "index.js",
   "author": "Alberto Rico",
