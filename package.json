@@ -1,6 +1,6 @@
 {
   "name": "number-helper-functions",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Helper with multiple number-related methods",
   "main": "index.js",
   "author": "Alberto Rico",
@@ -9,7 +9,9 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^6.3.0"
+    "eslint": "^5.4",
+    "eslint-plugin-jest": "^23.9.0",
+    "jest": "^25.5.4"
   },
   "prettier": {
     "trailingComma": "es5",
@@ -17,5 +19,9 @@
     "semi": false,
     "singleQuote": true,
     "eslintIntegration": true
+  },
+  "scripts": {
+    "test": "jest",
+    "prepublish": "yarn test"
   }
 }

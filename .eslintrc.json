@@ -2,10 +2,10 @@
   "env": {
     "browser": true,
     "es6": true,
-    "node": true,
-    "jquery": true
+    "node": true
   },
-  "extends": "eslint:recommended",
+  "extends": ["eslint:recommended", "plugin:jest/recommended"],
+  "plugins": ["jest"],
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 8
@@ -241,7 +241,7 @@
     "template-curly-spacing": ["error", "never"],
     "template-tag-spacing": "error",
     "unicode-bom": ["error", "never"],
-    "valid-jsdoc": "off",
+    "valid-jsdoc": "error",
     "vars-on-top": "off",
     "wrap-iife": "error",
     "wrap-regex": "error",
