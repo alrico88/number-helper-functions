@@ -1,4 +1,4 @@
-const NumberHelper = require('./index');
+const NumberHelper = require('../index');
 
 const number = 3;
 const oddNumber = number;
