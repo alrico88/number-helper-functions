@@ -173,3 +173,26 @@ describe('Check processNumber method', () => {
     expect(len).toEqual(2);
   });
 });
+
+describe('Check rangeBetween method', () => {
+  test('rangeBetween should return an array of values between range start and end, according to step', () => {
+    expect(NumberHelper.rangeBetween(0, 10, 2)).toEqual([0, 2, 4, 6, 8, 10]);
+  });
+
+  test('rangeBetween should return an array of values between range start and end, according to decimal step', () => {
+    expect(NumberHelper.rangeBetween(0, 1, 0.2)).toEqual([0, 0.2, 0.4, 0.6, 0.8, 1]);
+  });
+
+  test('rangeBetween should not throw when creating valid ranges with a decimal step', () => {
+    expect(() => {
+      NumberHelper.rangeBetween(0, 10, 0.2);
+    }).not.toThrow();
+  });
+
+  test('rangeBetween should throw if a range is not possible', () => {
+    expect(() => {
+      NumberHelper.rangeBetween(0, 10, 3);
+    }).toThrow();
+  });
+});
+

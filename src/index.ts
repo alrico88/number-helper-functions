@@ -186,6 +186,38 @@ export default class NumberHelper {
   }
 
   /**
+   * Creates a range between start and end, including them, according to step
+   *
+   * @static
+   * @param  {number} start Starting value
+   * @param  {number} end End value
+   * @param  {number} step Step to use for the range
+   * @return {number[]} The range
+   * @memberof NumberHelper
+   */
+  public static rangeBetween(start: number, end: number, step: number): number[] {
+    const stepIsBiggerThanDifference = step > end - start;
+    const stepIsZero = step === 0;
+    const numberOfItems = (end - start) / step;
+    const stepWillNotCoverRange = NumberHelper.isFloat(numberOfItems);
+
+    if (start > end) {
+      throw new Error('Start should be smaller than end');
+    }
+
+    if (stepIsBiggerThanDifference || stepIsZero || stepWillNotCoverRange) {
+      throw new Error('Invalid step value');
+    }
+
+    // eslint-disable-next-line @typescript-eslint/naming-convention
+    return Array(numberOfItems + 1).fill(0).map((_, index) => {
+      const valueToAdd = step * index;
+
+      return NumberHelper.processNumber(start + valueToAdd, NumberHelper.checkDecimals(step));
+    });
+  }
+
+  /**
    * Converts to number
    * @private
    * @static
