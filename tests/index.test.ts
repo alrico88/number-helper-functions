@@ -1,4 +1,5 @@
-const NumberHelper = require('../index');
+/* eslint-disable @typescript-eslint/no-magic-numbers */
+import NumberHelper from '../src';
 
 const number = 3;
 const oddNumber = number;
@@ -142,15 +143,22 @@ describe('Check convertToNumber method', () => {
 
   test('convertToNumber should return a number with the desired number of decimals', () => {
     const num = NumberHelper.convertToNumber(floatAsString, 2);
-    const len = num
-      .toString()
-      .split('.')
-      .pop().length;
+    const len = NumberHelper.checkDecimals(num);
     expect(len).toEqual(2);
   });
 
   test('convertToNumber should return 0 from a null value', () => {
     expect(NumberHelper.convertToNumber(null)).toEqual(0);
+  });
+});
+
+describe('Check checkDecimals method', () => {
+  test('checkDecimals should return the real amount of decimals for a float', () => {
+    expect(NumberHelper.checkDecimals(2.345)).toEqual(3);
+  });
+
+  test('checkDecimals should return the real amount of decimals for a string', () => {
+    expect(NumberHelper.checkDecimals('2.34534')).toEqual(5);
   });
 });
 
@@ -161,10 +169,7 @@ describe('Check processNumber method', () => {
 
   test('processNumber should return 2 decimals for a float number if no decimals are explicitly declared', () => {
     const num = NumberHelper.processNumber(floatAsString);
-    const len = num
-      .toString()
-      .split('.')
-      .pop().length;
+    const len = NumberHelper.checkDecimals(num);
     expect(len).toEqual(2);
   });
 });

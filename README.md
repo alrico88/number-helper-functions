@@ -1,172 +1,370 @@
-<a name="NumberHelper"></a>
+# number-helper-functions
 
-## NumberHelper
+## Table of contents
 
-**Kind**: global class
+### Type aliases
 
-- [NumberHelper](#NumberHelper)
-  - [new NumberHelper()](#new_NumberHelper_new)
-  - [.isNumber(n)](#NumberHelper.isNumber) ⇒ <code>boolean</code>
-  - [.isInt(n)](#NumberHelper.isInt) ⇒ <code>boolean</code>
-  - [.isFloat(n)](#NumberHelper.isFloat) ⇒ <code>boolean</code>
-  - [.isEven(n)](#NumberHelper.isEven) ⇒ <code>boolean</code>
-  - [.isOdd(n)](#NumberHelper.isOdd) ⇒ <code>boolean</code>
-  - [.isFinite(n)](#NumberHelper.isFinite) ⇒ <code>boolean</code>
-  - [.isPrime(num)](#NumberHelper.isPrime) ⇒ <code>boolean</code>
-  - [.getRandom(min, max)](#NumberHelper.getRandom) ⇒ <code>number</code>
-  - [.prefixWithZeros(number, length)](#NumberHelper.prefixWithZeros) ⇒ <code>string</code>
-  - [.convertToNumber(toCheck, [decimals])](#NumberHelper.convertToNumber) ⇒ <code>number</code>
-  - [.processNumber(value, [decimals])](#NumberHelper.processNumber) ⇒ <code>number</code>
+- [NumberLik#numberlike)
 
-<a name="new_NumberHelper_new"></a>
+## Type aliases
 
-### new NumberHelper()
+### NumberLike
 
-NumberHelper Class
+Ƭ **NumberLike**: _string_ \| _number_ \| _null_ \| _undefined_
 
-<a name="NumberHelper.isNumber"></a>
+Defined in: index.ts:1
 
-### NumberHelper.isNumber(n) ⇒ <code>boolean</code>
+# Class: default
 
-Checks if element is a number
+NumberHelper class
 
-**Kind**: static method of [<code>NumberHelper</code>](#NumberHelper)  
-**Returns**: <code>boolean</code> - Whether the element is a number or not
+**`export`**
 
-| Param | Type                                       | Description          |
-| ----- | ------------------------------------------ | -------------------- |
-| n     | <code>string</code> \| <code>number</code> | The element to check |
+## Table of contents
 
-<a name="NumberHelper.isInt"></a>
+### Constructors
 
-### NumberHelper.isInt(n) ⇒ <code>boolean</code>
+- [constructor](#constructor)
 
-Checks if element is an integer
+### Methods
 
-**Kind**: static method of [<code>NumberHelper</code>](#NumberHelper)  
-**Returns**: <code>boolean</code> - Whether the number is an integer or not
+- [checkDecimals](#checkdecimals)
+- [convertToNumber](#converttonumber)
+- [enforceNumber](#enforcenumber)
+- [getRandom](#getrandom)
+- [isEven](#iseven)
+- [isFinite](#isfinite)
+- [isFloat](#isfloat)
+- [isInt](#isint)
+- [isNumber](#isnumber)
+- [isOdd](#isodd)
+- [isPrime](#isprime)
+- [prefixWithZeros](#prefixwithzeros)
+- [processNumber](#processnumber)
 
-| Param | Type                                       | Description     |
-| ----- | ------------------------------------------ | --------------- |
-| n     | <code>string</code> \| <code>number</code> | Number to check |
+## Constructors
 
-<a name="NumberHelper.isFloat"></a>
+### constructor
 
-### NumberHelper.isFloat(n) ⇒ <code>boolean</code>
+\+ **new default**(): [_default_]()
 
-Checks if element is a float number
+**Returns:** [_default_]()
 
-**Kind**: static method of [<code>NumberHelper</code>](#NumberHelper)  
-**Returns**: <code>boolean</code> - Whether the number is a float or not
+## Methods
 
-| Param | Type                                       | Description     |
-| ----- | ------------------------------------------ | --------------- |
-| n     | <code>string</code> \| <code>number</code> | Number to check |
+### checkDecimals
 
-<a name="NumberHelper.isEven"></a>
+▸ `Static`**checkDecimals**(`number`: [_NumberLike_](#numberlike)): _number_
 
-### NumberHelper.isEven(n) ⇒ <code>boolean</code>
+Checks the decimals of a number
 
-Checks if number is even
+**`static`**
 
-**Kind**: static method of [<code>NumberHelper</code>](#NumberHelper)  
-**Returns**: <code>boolean</code> - Whether the number is even or not
+**`memberof`** NumberHelper
 
-| Param | Type                | Description     |
-| ----- | ------------------- | --------------- |
-| n     | <code>number</code> | Number to check |
+#### Parameters:
 
-<a name="NumberHelper.isOdd"></a>
+| Name     | Type                        | Description                               |
+| :------- | :-------------------------- | :---------------------------------------- |
+| `number` | [_NumberLike_](#numberlike) | Number to check the amount of decimals of |
 
-### NumberHelper.isOdd(n) ⇒ <code>boolean</code>
+**Returns:** _number_
 
-Checks if number is odd
+The number of decimals
 
-**Kind**: static method of [<code>NumberHelper</code>](#NumberHelper)  
-**Returns**: <code>boolean</code> - Whether the number is odd or not
+Defined in: index.ts:146
 
-| Param | Type                | Description     |
-| ----- | ------------------- | --------------- |
-| n     | <code>number</code> | Number to check |
+---
 
-<a name="NumberHelper.isFinite"></a>
+### convertToNumber
 
-### NumberHelper.isFinite(n) ⇒ <code>boolean</code>
-
-Checks if numer is finite
-
-**Kind**: static method of [<code>NumberHelper</code>](#NumberHelper)  
-**Returns**: <code>boolean</code> - Whether the number is finite or not
-
-| Param | Type                | Description     |
-| ----- | ------------------- | --------------- |
-| n     | <code>number</code> | Number to check |
-
-<a name="NumberHelper.isPrime"></a>
-
-### NumberHelper.isPrime(num) ⇒ <code>boolean</code>
-
-Checks if number is prime
-
-**Kind**: static method of [<code>NumberHelper</code>](#NumberHelper)  
-**Returns**: <code>boolean</code> - Whether the numbere is prime or not
-
-| Param | Type                | Description     |
-| ----- | ------------------- | --------------- |
-| num   | <code>number</code> | Number to check |
-
-<a name="NumberHelper.getRandom"></a>
-
-### NumberHelper.getRandom(min, max) ⇒ <code>number</code>
-
-Gets random integer number in a range
-
-**Kind**: static method of [<code>NumberHelper</code>](#NumberHelper)  
-**Returns**: <code>number</code> - Random number in range
-
-| Param | Type                | Description    |
-| ----- | ------------------- | -------------- |
-| min   | <code>number</code> | Minimum number |
-| max   | <code>number</code> | Maximum number |
-
-<a name="NumberHelper.prefixWithZeros"></a>
-
-### NumberHelper.prefixWithZeros(number, length) ⇒ <code>string</code>
-
-Prefixes a number with zeros until desired length
-
-**Kind**: static method of [<code>NumberHelper</code>](#NumberHelper)  
-**Returns**: <code>string</code> - Padded number as a string
-
-| Param  | Type                | Description           |
-| ------ | ------------------- | --------------------- |
-| number | <code>number</code> | Number to pad         |
-| length | <code>number</code> | Desired number length |
-
-<a name="NumberHelper.convertToNumber"></a>
-
-### NumberHelper.convertToNumber(toCheck, [decimals]) ⇒ <code>number</code>
+▸ `Static`**convertToNumber**(`toCheck`: [_NumberLike_](#numberlike), `decimals?`: _number_): _number_
 
 Converts string to number
 
-**Kind**: static method of [<code>NumberHelper</code>](#NumberHelper)  
-**Returns**: <code>number</code> - Converted number
+**`static`**
 
-| Param      | Type                                       | Default        | Description                    |
-| ---------- | ------------------------------------------ | -------------- | ------------------------------ |
-| toCheck    | <code>string</code> \| <code>number</code> |                | Number-like to convert         |
-| [decimals] | <code>number</code>                        | <code>2</code> | Number of decimals to truncate |
+**`memberof`** NumberHelper
 
-<a name="NumberHelper.processNumber"></a>
+#### Parameters:
 
-### NumberHelper.processNumber(value, [decimals]) ⇒ <code>number</code>
+| Name       | Type                        | Default value | Description            |
+| :--------- | :-------------------------- | :------------ | :--------------------- |
+| `toCheck`  | [_NumberLike_](#numberlike) | -             | Number-like to convert |
+| `decimals` | _number_                    | 2             | -                      |
+
+**Returns:** _number_
+
+Converted number
+
+Defined in: index.ts:165
+
+---
+
+### enforceNumber
+
+▸ `Private` `Static`**enforceNumber**(`n`: [_NumberLike_](#numberlike)): _number_
+
+Converts to number
+
+**`static`**
+
+**`memberof`** NumberHelper
+
+#### Parameters:
+
+| Name | Type                        | Description                           |
+| :--- | :-------------------------- | :------------------------------------ |
+| `n`  | [_NumberLike_](#numberlike) | Number or string to convert to number |
+
+**Returns:** _number_
+
+The resulting number
+
+Defined in: index.ts:196
+
+---
+
+### getRandom
+
+▸ `Static`**getRandom**(`min`: _number_, `max`: _number_): _number_
+
+Gets random integer number in a range
+
+**`static`**
+
+**`memberof`** NumberHelper
+
+#### Parameters:
+
+| Name  | Type     | Description    |
+| :---- | :------- | :------------- |
+| `min` | _number_ | Minimum number |
+| `max` | _number_ | Maximum number |
+
+**Returns:** _number_
+
+Random number in range
+
+Defined in: index.ts:122
+
+---
+
+### isEven
+
+▸ `Static`**isEven**(`n`: [_NumberLike_](#numberlike)): _boolean_
+
+Checks if number is even
+Any integer that can be divided exactly by 2 is an even number
+
+**`static`**
+
+**`memberof`** NumberHelper
+
+#### Parameters:
+
+| Name | Type                        | Description     |
+| :--- | :-------------------------- | :-------------- |
+| `n`  | [_NumberLike_](#numberlike) | Number to check |
+
+**Returns:** _boolean_
+
+Whether the number is even or not
+
+Defined in: index.ts:64
+
+---
+
+### isFinite
+
+▸ `Static`**isFinite**(`n`: [_NumberLike_](#numberlike)): _boolean_
+
+Checks if numer is finite
+
+**`static`**
+
+**`memberof`** NumberHelper
+
+#### Parameters:
+
+| Name | Type                        | Description     |
+| :--- | :-------------------------- | :-------------- |
+| `n`  | [_NumberLike_](#numberlike) | Number to check |
+
+**Returns:** _boolean_
+
+Whether the number is finite or not
+
+Defined in: index.ts:89
+
+---
+
+### isFloat
+
+▸ `Static`**isFloat**(`n`: [_NumberLike_](#numberlike)): _boolean_
+
+Checks if element is a float number
+
+**`static`**
+
+**`memberof`** NumberHelper
+
+#### Parameters:
+
+| Name | Type                        | Description     |
+| :--- | :-------------------------- | :-------------- |
+| `n`  | [_NumberLike_](#numberlike) | Number to check |
+
+**Returns:** _boolean_
+
+Whether the number is a float or not
+
+Defined in: index.ts:47
+
+---
+
+### isInt
+
+▸ `Static`**isInt**(`n`: [_NumberLike_](#numberlike)): _boolean_
+
+Checks if element is an integer
+
+**`static`**
+
+**`memberof`** NumberHelper
+
+#### Parameters:
+
+| Name | Type                        | Description     |
+| :--- | :-------------------------- | :-------------- |
+| `n`  | [_NumberLike_](#numberlike) | Number to check |
+
+**Returns:** _boolean_
+
+Whether the number is an integer or not
+
+Defined in: index.ts:31
+
+---
+
+### isNumber
+
+▸ `Static`**isNumber**(`n`: [_NumberLike_](#numberlike)): _boolean_
+
+Checks if element is a number
+
+**`static`**
+
+**`memberof`** NumberHelper
+
+#### Parameters:
+
+| Name | Type                        | Description          |
+| :--- | :-------------------------- | :------------------- |
+| `n`  | [_NumberLike_](#numberlike) | The element to check |
+
+**Returns:** _boolean_
+
+Whether the element is a number or not
+
+Defined in: index.ts:19
+
+---
+
+### isOdd
+
+▸ `Static`**isOdd**(`n`: [_NumberLike_](#numberlike)): _boolean_
+
+Checks if number is odd
+Any integer that cannot be divided exactly by 2 is an odd number.
+
+**`static`**
+
+**`memberof`** NumberHelper
+
+#### Parameters:
+
+| Name | Type                        | Description     |
+| :--- | :-------------------------- | :-------------- |
+| `n`  | [_NumberLike_](#numberlike) | Number to check |
+
+**Returns:** _boolean_
+
+Whether the number is odd or not
+
+Defined in: index.ts:77
+
+---
+
+### isPrime
+
+▸ `Static`**isPrime**(`num`: _number_): _boolean_
+
+Checks if number is prime
+Natural number greater than 1 that cannot be formed by multiplying two smaller natural numbers
+
+**`static`**
+
+**`memberof`** NumberHelper
+
+#### Parameters:
+
+| Name  | Type     | Description     |
+| :---- | :------- | :-------------- |
+| `num` | _number_ | Number to check |
+
+**Returns:** _boolean_
+
+Whether the numbere is prime or not
+
+Defined in: index.ts:102
+
+---
+
+### prefixWithZeros
+
+▸ `Static`**prefixWithZeros**(`number`: _number_, `length`: _number_): _string_
+
+Prefixes a number with zeros until desired length
+
+**`static`**
+
+**`memberof`** NumberHelper
+
+#### Parameters:
+
+| Name     | Type     | Description           |
+| :------- | :------- | :-------------------- |
+| `number` | _number_ | Number to pad         |
+| `length` | _number_ | Desired number length |
+
+**Returns:** _string_
+
+Padded number as a string
+
+Defined in: index.ts:135
+
+---
+
+### processNumber
+
+▸ `Static`**processNumber**(`value`: [_NumberLike_](#numberlike), `decimals?`: _number_): _number_
 
 Processes number to get clean value
 
-**Kind**: static method of [<code>NumberHelper</code>](#NumberHelper)  
-**Returns**: <code>number</code> - Parsed and processed number
+**`static`**
 
-| Param      | Type                                       | Default        | Description                    |
-| ---------- | ------------------------------------------ | -------------- | ------------------------------ |
-| value      | <code>string</code> \| <code>number</code> |                | String or number to process    |
-| [decimals] | <code>number</code>                        | <code>2</code> | No. of decimals to truncate to |
+**`memberof`** NumberHelper
+
+#### Parameters:
+
+| Name       | Type                        | Default value | Description                 |
+| :--------- | :-------------------------- | :------------ | :-------------------------- |
+| `value`    | [_NumberLike_](#numberlike) | -             | String or number to process |
+| `decimals` | _number_                    | 2             | -                           |
+
+**Returns:** _number_
+
+Parsed and processed number
+
+Defined in: index.ts:184
