@@ -1,6 +1,6 @@
 {
   "name": "number-helper-functions",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Helper with multiple number-related methods",
   "main": "dist/index.js",
   "module": "dist/number-helper-functions.esm.js",
