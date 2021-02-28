@@ -1,10 +1,62 @@
 # number-helper-functions
 
+Library with multiple number-related methods.
+
+## Installation
+
+### Using npm
+
+`npm i number-helper-functions`
+
+### Using yarn
+
+`yarn add number-helper-functions`
+
+## Usage
+
+### In a CommonJS env
+
+```javascript
+const NumberHelper = require('number-helper-functions');
+
+NumberHelper.isInt(4); // returns true
+```
+
+or
+
+```javascript
+const { isFinite } = require('number-helper-functions');
+
+NumberHelper.isFinite(Infinity); // returns false
+```
+
+### Using ES6 imports
+
+```javascript
+import NumberHelper from 'number-helper-functions';
+
+NumberHelper.isInt(4); // returns true
+```
+
+or
+
+```javascript
+import { processNumber } from 'number-helper-functions';
+
+NumberHelper.processNumber('4.5432', 2); // returns 4.54
+```
+
+## Documentation
+
 ## Table of contents
+
+### Classes
+
+- [default](#)
 
 ### Type aliases
 
-- [NumberLik#numberlike)
+- [NumberLike](#numberlike)
 
 ## Type aliases
 
@@ -12,7 +64,7 @@
 
 Ƭ **NumberLike**: _string_ \| _number_ \| _null_ \| _undefined_
 
-Defined in: index.ts:1
+Defined in: [index.ts:1](https://github.com/alrico88/number-helper-functions/blob/8a2bab7/src/index.ts#L1)
 
 # Class: default
 
@@ -41,14 +93,15 @@ NumberHelper class
 - [isPrime](#isprime)
 - [prefixWithZeros](#prefixwithzeros)
 - [processNumber](#processnumber)
+- [rangeBetween](#rangebetween)
 
 ## Constructors
 
 ### constructor
 
-\+ **new default**(): [_default_]()
+\+ **new default**(): [_default_](#)
 
-**Returns:** [_default_]()
+**Returns:** [_default_](#)
 
 ## Methods
 
@@ -72,7 +125,7 @@ Checks the decimals of a number
 
 The number of decimals
 
-Defined in: index.ts:146
+Defined in: [index.ts:146](https://github.com/alrico88/number-helper-functions/blob/8a2bab7/src/index.ts#L146)
 
 ---
 
@@ -97,7 +150,7 @@ Converts string to number
 
 Converted number
 
-Defined in: index.ts:165
+Defined in: [index.ts:165](https://github.com/alrico88/number-helper-functions/blob/8a2bab7/src/index.ts#L165)
 
 ---
 
@@ -121,7 +174,7 @@ Converts to number
 
 The resulting number
 
-Defined in: index.ts:196
+Defined in: [index.ts:228](https://github.com/alrico88/number-helper-functions/blob/8a2bab7/src/index.ts#L228)
 
 ---
 
@@ -146,7 +199,7 @@ Gets random integer number in a range
 
 Random number in range
 
-Defined in: index.ts:122
+Defined in: [index.ts:122](https://github.com/alrico88/number-helper-functions/blob/8a2bab7/src/index.ts#L122)
 
 ---
 
@@ -171,7 +224,7 @@ Any integer that can be divided exactly by 2 is an even number
 
 Whether the number is even or not
 
-Defined in: index.ts:64
+Defined in: [index.ts:64](https://github.com/alrico88/number-helper-functions/blob/8a2bab7/src/index.ts#L64)
 
 ---
 
@@ -195,7 +248,7 @@ Checks if numer is finite
 
 Whether the number is finite or not
 
-Defined in: index.ts:89
+Defined in: [index.ts:89](https://github.com/alrico88/number-helper-functions/blob/8a2bab7/src/index.ts#L89)
 
 ---
 
@@ -219,7 +272,7 @@ Checks if element is a float number
 
 Whether the number is a float or not
 
-Defined in: index.ts:47
+Defined in: [index.ts:47](https://github.com/alrico88/number-helper-functions/blob/8a2bab7/src/index.ts#L47)
 
 ---
 
@@ -243,7 +296,7 @@ Checks if element is an integer
 
 Whether the number is an integer or not
 
-Defined in: index.ts:31
+Defined in: [index.ts:31](https://github.com/alrico88/number-helper-functions/blob/8a2bab7/src/index.ts#L31)
 
 ---
 
@@ -267,7 +320,7 @@ Checks if element is a number
 
 Whether the element is a number or not
 
-Defined in: index.ts:19
+Defined in: [index.ts:19](https://github.com/alrico88/number-helper-functions/blob/8a2bab7/src/index.ts#L19)
 
 ---
 
@@ -292,7 +345,7 @@ Any integer that cannot be divided exactly by 2 is an odd number.
 
 Whether the number is odd or not
 
-Defined in: index.ts:77
+Defined in: [index.ts:77](https://github.com/alrico88/number-helper-functions/blob/8a2bab7/src/index.ts#L77)
 
 ---
 
@@ -317,7 +370,7 @@ Natural number greater than 1 that cannot be formed by multiplying two smaller n
 
 Whether the numbere is prime or not
 
-Defined in: index.ts:102
+Defined in: [index.ts:102](https://github.com/alrico88/number-helper-functions/blob/8a2bab7/src/index.ts#L102)
 
 ---
 
@@ -342,7 +395,7 @@ Prefixes a number with zeros until desired length
 
 Padded number as a string
 
-Defined in: index.ts:135
+Defined in: [index.ts:135](https://github.com/alrico88/number-helper-functions/blob/8a2bab7/src/index.ts#L135)
 
 ---
 
@@ -367,4 +420,30 @@ Processes number to get clean value
 
 Parsed and processed number
 
-Defined in: index.ts:184
+Defined in: [index.ts:184](https://github.com/alrico88/number-helper-functions/blob/8a2bab7/src/index.ts#L184)
+
+---
+
+### rangeBetween
+
+▸ `Static`**rangeBetween**(`start`: _number_, `end`: _number_, `step`: _number_): _number_[]
+
+Creates a range between start and end, including them, according to step
+
+**`static`**
+
+**`memberof`** NumberHelper
+
+#### Parameters:
+
+| Name    | Type     | Description               |
+| :------ | :------- | :------------------------ |
+| `start` | _number_ | Starting value            |
+| `end`   | _number_ | End value                 |
+| `step`  | _number_ | Step to use for the range |
+
+**Returns:** _number_[]
+
+The range
+
+Defined in: [index.ts:198](https://github.com/alrico88/number-helper-functions/blob/8a2bab7/src/index.ts#L198)
