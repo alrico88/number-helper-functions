@@ -19,3 +19,19 @@ export {
   processNumber,
   rangeBetween,
 };
+
+export default {
+  checkDecimals,
+  convertToNumber,
+  enforceNumber,
+  getRandom,
+  isEven,
+  isFloat,
+  isInt,
+  isNumber,
+  isOdd,
+  isPrime,
+  prefixWithZeros,
+  processNumber,
+  rangeBetween,
+};

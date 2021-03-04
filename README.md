@@ -33,7 +33,7 @@ NumberHelper.isFinite(Infinity); // returns false
 ### Using ES6 imports
 
 ```javascript
-import * as NumberHelper from 'number-helper-functions';
+import NumberHelper from 'number-helper-functions';
 
 NumberHelper.isInt(4); // returns true
 ```
