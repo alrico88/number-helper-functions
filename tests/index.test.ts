@@ -9,7 +9,6 @@ const notNumber = 'not a number';
 const float = 3.1383485;
 const oddNumberAsString = '3';
 const floatAsString = '3.1383485';
-const infinity = Infinity;
 const primeNumber = 5;
 
 describe('Check isNumber method', () => {
@@ -105,16 +104,6 @@ describe('Check isPrime method', () => {
 
   test('isPrime should return false if string is not prime', () => {
     expect(NumberHelper.isPrime(evenNumber)).toBe(false);
-  });
-});
-
-describe('Check isFinite method', () => {
-  test('isFinite should return true if item is finite', () => {
-    expect(NumberHelper.isFinite(number)).toBe(true);
-  });
-
-  test('isFinite should return false if item is Infinite', () => {
-    expect(NumberHelper.isFinite(infinity)).toBe(false);
   });
 });
 
