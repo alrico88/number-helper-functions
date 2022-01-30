@@ -21,7 +21,7 @@
     "url": "https://github.com/alrico88/number-helper-functions"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">=12"
   },
   "license": "MIT",
   "devDependencies": {
