@@ -10,11 +10,10 @@ branches:
     - master
 
 before_install:
-  - curl -o- -L https://yarnpkg.com/install.sh | bash
-  - export PATH="$HOME/.yarn/bin:$PATH"
+  - curl -fsSL https://get.pnpm.io/install.sh | sh -
 
 install:
-  - yarn install
+  - pnpm install
 
 cache:
   yarn: true
@@ -23,5 +22,5 @@ cache:
     - "node_modules"
 
 script:
-  - yarn test
-  - yarn run coveralls
+  - pnpm run test
+  - pnpm run coveralls

@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
+import {describe, expect, test} from 'vitest';
 import NumberHelper from '../src';
 
 const number = 3;
